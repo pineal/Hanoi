@@ -6,5 +6,4 @@ public class Tower extends Stack<Integer> {
 	public Tower() {
 		super();
 	}
-
 }
