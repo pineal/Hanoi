@@ -2,6 +2,7 @@
 public class Hanoi {
 
 	Tower t1, t2, t3;
+	int moves;
 	
 	public Hanoi(int size) {
 		t1 = new Tower();
@@ -37,9 +38,14 @@ public class Hanoi {
 	}
 	
 	public void solve() {
+		moves = 0;
 		printTowers();
 		System.out.println("---------------------------------------------------");
 		moveTower(t1, t2, t3, t1.size());
+	}
+	
+	public int getMoves() {
+		return moves;
 	}
 	
 	public void moveTower(Tower src, Tower help, Tower dest, int count) {
@@ -55,13 +61,16 @@ public class Hanoi {
 	}
 	
 	public void move(Tower src, Tower dest) {
-		if(dest.empty() || src.peek() < dest.peek())
+		if(dest.empty() || src.peek() < dest.peek()) {
 			dest.push( src.pop());
+			moves++;
+		}	
 		else {
 			printTowers();
 			System.out.println("ungültiger spielzug!!");
 			System.exit(0);
 		}
+		
 		
 		printTowers();
 		System.out.println("---------------------------------------------------");
