@@ -15,5 +15,4 @@ public class Program {
 		
 		System.out.println("moves needed: " + hanoi.getMoves());
 	}
-
 }

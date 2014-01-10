@@ -22,7 +22,6 @@ public class Hanoi {
 			System.out.print("-");
 	}
 	
-	
 	public void printTowers() { 
 		int max = Math.max(t1.size(), Math.max(t2.size(), t3.size()));
 		
